@@ -15,6 +15,7 @@ const user_email_input = document.querySelector("#inputUserEmail");
 user_email_input.addEventListener("click", function () {
   user_email_input.value = user.email_address;
 });
+
 const pet_category_input = document.querySelector("#inputPetCategory");
 const breed_input = document.querySelector("#inputBreed");
 const colour_input = document.querySelector("#inputColour");
@@ -61,10 +62,6 @@ selectImage.addEventListener("click", function () {
   inputFile.click();
 });
 
-// inputFile.onchange = (event) => {
-//   inputImg = ;
-// };
-
 // upload images area
 
 // add submit button click event
@@ -101,6 +98,7 @@ submitButton.addEventListener("click", async (event) => {
     description_text,
     selectedDate
   );
+
   const pet_age = pet.getAge();
 
   let vaccinationFormattedDate;
@@ -121,6 +119,7 @@ submitButton.addEventListener("click", async (event) => {
   const formData = new FormData();
 
   formData.append("id_pet_category", id_pet_category);
+  formData.append("id_user", user.id);
   formData.append("breed", breed_text);
   formData.append("colour", colour_text);
   formData.append("weight", weight_text);
@@ -132,7 +131,7 @@ submitButton.addEventListener("click", async (event) => {
   formData.append("last_edit_date", formattedDate);
   formData.append("post_expire_date", formattedPostExpireDate);
   formData.append("image", inputFile.files ? inputFile.files[0] : null);
-  formData.append("id_user", user.id);
+  //formData.append("id_pet", id_pet);
 
   try {
     await pets.registratePet(formData);
