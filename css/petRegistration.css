@@ -1,0 +1,170 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.fill-title {
+  font-size: 23px;
+  background-color: #e9f0ff;
+  border-radius: 10px;
+  padding: 3px 15px;
+}
+
+/* description area */
+#inputDescription {
+  height: 200px;
+  resize: none;
+  overflow-y: auto;
+  text-align: left;
+  vertical-align: top;
+}
+
+#inputDescription::placeholder {
+  position: absolute;
+  /* top: 10px;
+  left: 5px; */
+  color: #999;
+}
+
+/* select picture area */
+.select-img-area {
+  border: 1px dashed #999;
+  border-radius: 5px;
+  height: 250px;
+}
+
+.select-img {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.left-section,
+.right-section {
+  width: 40%;
+  padding: 15px;
+}
+
+.img-area {
+  /* background-color: lightgray; */
+  /* position: relative;
+  margin-bottom: 20px;
+  text-align: center; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-img .upload-icon {
+  font-size: 45px;
+}
+
+.select-img p {
+  color: #999;
+  font-size: 13px;
+}
+
+.select-img p span {
+  font-weight: 600;
+}
+
+.img-area img {
+  top: 0;
+  right: 0;
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 100;
+  padding: 15px;
+}
+
+.btn-select-image {
+  padding: 8px 8px;
+  border-radius: 15px !important;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+/* upload area */
+/* section .image-row {
+  background: #e9f0ff;
+  margin-bottom: 10px;
+  list-style: none;
+  padding: 5px 5px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+section .row i {
+  font-size: 20px;
+}
+
+section .details span {
+  font-size: 13px;
+} */
+
+/* progress area */
+/* .progress-area .image-row .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-area .details {
+  margin-left: 2px;
+}
+
+.progress-area .percent {
+  font-size: 13px;
+}
+
+.uploaded-area .image-row .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.uploaded-area .details {
+  margin-left: 2px;
+}
+
+.uploaded-area .details .size {
+  font-size: 11px;
+  color: #404040;
+}
+
+.uploaded-area .bi-check-lg {
+  color: #6990f2;
+}
+
+.progress-area .progress-bar {
+  height: 6px;
+  width: 85%;
+  background: #fff;
+
+  border-radius: 30px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.progress-bar .progress {
+  height: 100%;
+  width: 50%;
+  background: #6990f2;
+  border-radius: inherit;
+} */
