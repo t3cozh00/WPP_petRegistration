@@ -101,3 +101,11 @@ DROP COLUMN adopted_on;
 
 ALTER TABLE pet01
 DROP COLUMN adoption_remarks;
+
+ALTER TABLE pet01
+ADD COLUMN id_user integer REFERENCES tblUser(id_user) NOT NULL,
+
+ALTER TABLE pet01
+ALTER COLUMN is_active SET DEFAULT true;
+ALTER TABLE pet01
+ALTER COLUMN is_adopted SET DEFAULT false;

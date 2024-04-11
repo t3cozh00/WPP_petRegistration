@@ -3,8 +3,11 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+
 const petRouter = require("./routes/petRoute.js");
 const userRouter = require("./routes/userRoute.js");
+//const petImageRouter = require("./routes/petImageRoute.js");
+
 const swaggerDocs = require("./swagger");
 const fileUpload = require("express-fileupload");
 // const swaggerDocs = require("./swagger");
@@ -26,6 +29,7 @@ swaggerDocs(app);
 // const BASE_URI = "/api/v1";
 app.use("/", petRouter);
 app.use("/", userRouter);
+//app.use("/", petImageRouter);
 
 app.listen(PORT, () => {
   console.log(`PetLove API server listens on port ${PORT} (${SERVER}:${PORT})`);

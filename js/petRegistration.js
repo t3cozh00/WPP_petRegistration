@@ -5,7 +5,7 @@ import { User } from "./class/User.js";
 const user = new User();
 const pets = new Pets("http://localhost:5050/api/v1");
 
-console.log(user.id_user);
+console.log(user.id);
 console.log(user.email_address);
 
 const submitButton = document.querySelector(".btn-submit");
@@ -55,7 +55,7 @@ noCheck.addEventListener("change", function () {
 const selectImage = document.querySelector(".btn-select-image");
 const inputFile = document.querySelector("#fileMultiple");
 const imgArea = document.querySelector(".right-section .img-display");
-imgArea.src = "http://localhost:5050/images/placeholder.png";
+imgArea.src = "http://localhost:5050/images/bird_01.jpg";
 // select images area
 selectImage.addEventListener("click", function () {
   inputFile.click();
@@ -132,6 +132,7 @@ submitButton.addEventListener("click", async (event) => {
   formData.append("last_edit_date", formattedDate);
   formData.append("post_expire_date", formattedPostExpireDate);
   formData.append("image", inputFile.files ? inputFile.files[0] : null);
+  formData.append("id_user", user.id);
 
   try {
     await pets.registratePet(formData);

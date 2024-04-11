@@ -33,7 +33,9 @@ const onPetRegistrationCreate = async (req, res) => {
       post_expire_date,
       is_active,
       is_adopted,
+      id_pet,
       //file_name,
+      id_user,
     } = req.body;
     //save pet registration data
     const result = await createPetRegistration({
@@ -51,12 +53,18 @@ const onPetRegistrationCreate = async (req, res) => {
       is_active,
       is_adopted,
       file_name,
+      id_pet,
+      id_user,
     });
-    res.status(200).send(result);
+    // Check if both pet and pet image information were successfully created
+    if (result.pet && result.petImage) {
+      res.status(200).send(result);
+    } else {
+      res.status(400).send("Failed to create pet registration.");
+    }
   } catch (error) {
     res.status(400).send(error.message);
   }
-  return;
 };
 
 const onDeletePetData = async (req, res) => {
