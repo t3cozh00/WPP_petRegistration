@@ -23,62 +23,16 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="./css/templateStyles.css" />
-    <link rel="stylesheet" href="./css/petRegistration.css" />
+    <link rel="stylesheet" href="../css/templateStyles.css" />
+    <link rel="stylesheet" href="../css/petRegistration.css" />
   </head>
 
   <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-gray bg-gray text-white">
-      <!-- logo-->
-      <a class="navbar-brand" href="#">
-        <img src="image/log.png" width="150" height="100" alt="Logo" />
-      </a>
-
-      <!--Toggle button-->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <!-- List of links-->
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/index.html"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Features.html">Pets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/template_petRegistration.html">Posts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/About.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/register.html">Register</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div id="navbar-container"></div>
 
     <div class="main-image-box">
-      <img src="image/Header.png" alt="Header animals" class="main-image" />
+      <img src="../image/Header.png" alt="Header animals" class="main-image" />
     </div>
 
     <!-- Main Content -->
@@ -192,14 +146,15 @@
           <textarea
             class="form-control"
             id="inputDescription"
-            placeholder="* Include any special remarks"
+            placeholder="* Include any special marks"
           ></textarea>
         </div>
 
+        <!-- information4 select and upload picture area -->
         <div class="col-md-12">
           <label for="formFileMultiple" class="form-label">Upload Images</label>
         </div>
-        <!-- information4 select and upload picture area -->
+
         <div class="col-md-12">
           <div class="container">
             <div class="row select-img-area">
@@ -237,60 +192,11 @@
         </div>
       </form>
     </div>
-    <!-- </main> -->
 
+    <!-- Toast container  -->
+    <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
     <!-- Footer -->
-    <footer class="bg-dark text-dark-dark py-4 footer-bg">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h5 class="about-us">About Us</h5>
-            <p class="About">
-              At PetLove, our mission is to provide a platform where pets can
-              find the caring families they deserve while offering a seamless
-              and enjoyable adoption experience for our users.
-            </p>
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="#" class="text-black"
-                  ><i class="fab fa-facebook fa-lg"></i
-                ></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="text-black"
-                  ><i class="fab fa-twitter fa-lg"></i
-                ></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="text-black"
-                  ><i class="fab fa-instagram fa-lg"></i
-                ></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="text-black"
-                  ><i class="fab fa-linkedin fa-lg"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <h5 class="info">Contact Information</h5>
-            <ul class="info1">
-              <li>
-                <i class="fas fa-map-marker-alt"></i> Address: Oulu, Finland
-              </li>
-              <li><i class="fas fa-phone"></i> Phone: +123456789</li>
-              <li><i class="fas fa-envelope"></i> Email: group9@gmail.com</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col text-center">
-            <p class="more">© 2024 PetLove. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div id="footer-container"></div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -299,7 +205,10 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <!-- Custom Script -->
-    <!-- <script src="script.js"></script> -->
-    <script src="./js/petRegistration.js" type="module"></script>
+    <!-- Custom Script -->
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/toast.js"></script>
+    <script src="../js/indexPetRegistration.js" type="module"></script>
   </body>
 </html>

@@ -1,9 +1,9 @@
 import { User } from "./class/User.js";
 
 const user = new User();
-const email_address_input = document.querySelector("#user-email");
+const email_address_input = document.querySelector("#email");
 const password_input = document.querySelector("#password");
-const submit_button = document.querySelector("#login-button");
+const submit_button = document.querySelector(".btn-primary");
 
 submit_button.addEventListener("click", (event) => {
   event.preventDefault();
@@ -14,7 +14,7 @@ submit_button.addEventListener("click", (event) => {
     .login(email_address, password)
     .then((user) => {
       console.log(user);
-      window.location.href = "template_petRegistration.html";
+      window.location.href = "petRegistration.html";
     })
     .catch((error) => {
       alert(error);

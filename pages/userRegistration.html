@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Navbar & Slideshow</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <div id="navbar-container"></div>
+    <!-- Main Content -->
+    <main class="container center-container">
+      <div class="main-image-box">
+        <img
+          src="../image/Header.png"
+          alt="Header animals"
+          class="main-image"
+        />
+      </div>
+      <div>
+        <table class="main-table">
+          <tbody>
+            <tr>
+              <td><h2>User e-Mail</h2></td>
+              <td>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="name@example.com"
+                  id="Useremail"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><h2>User New Password</h2></td>
+              <td><input id="UsernewPW" /></td>
+            </tr>
+            <tr>
+              <td><h2>Confirm Password</h2></td>
+              <td><input id="UsernewConPW" /></td>
+            </tr>
+            <tr>
+              <td><h2>First Name</h2></td>
+              <td><input id="UserFirstName" /></td>
+              <div class="invalid-feedback">First name cannot be empty</div>
+            </tr>
+            <tr>
+              <td><h2>Last Name</h2></td>
+              <td><input id="UserLasttName" /></td>
+              <div class="invalid-feedback">Last name cannot be empty</div>
+            </tr>
+            <tr>
+              <td><h2>Address</h2></td>
+              <td><input id="UserAddress" /></td>
+              <div class="invalid-feedback">Address cannot be empty</div>
+            </tr>
+            <tr>
+              <td><h2>Postal Code</h2></td>
+              <td><input id="UserPostalcode" /></td>
+              <div class="invalid-feedback">Postal code cannot be empty</div>
+            </tr>
+            <tr>
+              <td><h2>City</h2></td>
+              <td><input id="UserCity" /></td>
+              <div class="invalid-feedback">City cannot be empty</div>
+            </tr>
+            <tr>
+              <td><h2>Phone Number</h2></td>
+              <td><input id="UserPhoneNumber" /></td>
+              <div class="invalid-feedback">Phone Number cannot be empty</div>
+            </tr>
+            <tr>
+              <td><h2>Registered Date</h2></td>
+              <td><input id="UserRegiDate" /></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td align="right">
+                <button type="button" class="btn btn-outline-primary btn-sm">
+                  Register
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- Toast container  -->
+    <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Custom Script -->
+    <script src="../js/petcategoryindex.js"></script>
+  </body>
+</html>

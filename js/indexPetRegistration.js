@@ -15,6 +15,7 @@ const user_email_input = document.querySelector("#inputUserEmail");
 user_email_input.addEventListener("click", function () {
   user_email_input.value = user.email_address;
 });
+
 const pet_category_input = document.querySelector("#inputPetCategory");
 const breed_input = document.querySelector("#inputBreed");
 const colour_input = document.querySelector("#inputColour");
@@ -54,18 +55,22 @@ noCheck.addEventListener("change", function () {
 // information4 select and upload picture area
 const selectImage = document.querySelector(".btn-select-image");
 const inputFile = document.querySelector("#fileMultiple");
-const imgArea = document.querySelector(".right-section .img-display");
-imgArea.src = "http://localhost:5050/images/bird_01.jpg";
+
 // select images area
 selectImage.addEventListener("click", function () {
   inputFile.click();
 });
-
-// inputFile.onchange = (event) => {
-//   inputImg = ;
-// };
-
 // upload images area
+inputFile.addEventListener("change", function () {
+  const image = this.files[0];
+  const reader = new FileReader();
+  reader.onload = () => {
+    const imgUrl = reader.result;
+    const imgArea = document.querySelector(".right-section .img-display");
+    imgArea.src = imgUrl;
+  };
+  reader.readAsDataURL(image);
+});
 
 // add submit button click event
 submitButton.addEventListener("click", async (event) => {
@@ -101,6 +106,7 @@ submitButton.addEventListener("click", async (event) => {
     description_text,
     selectedDate
   );
+
   const pet_age = pet.getAge();
 
   let vaccinationFormattedDate;
@@ -121,6 +127,7 @@ submitButton.addEventListener("click", async (event) => {
   const formData = new FormData();
 
   formData.append("id_pet_category", id_pet_category);
+  formData.append("id_user", user.id);
   formData.append("breed", breed_text);
   formData.append("colour", colour_text);
   formData.append("weight", weight_text);
@@ -132,12 +139,12 @@ submitButton.addEventListener("click", async (event) => {
   formData.append("last_edit_date", formattedDate);
   formData.append("post_expire_date", formattedPostExpireDate);
   formData.append("image", inputFile.files ? inputFile.files[0] : null);
-  formData.append("id_user", user.id);
+  //formData.append("id_pet", id_pet);
 
   try {
     await pets.registratePet(formData);
     // Redirect to a new page
-    //window.location.href = "successSubmit.html";
+    window.location.href = "successSubmit.html";
   } catch (error) {
     console.error("Failed to register pet:", error);
   }

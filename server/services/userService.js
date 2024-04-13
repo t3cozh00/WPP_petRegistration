@@ -4,7 +4,7 @@ const { queryDb } = require("../repository/queryDatabase");
 const userLogin = async (userData) => {
   try {
     const dbResult = await queryDb(
-      "select * from tblUser where email_address=$1",
+      "select * from account where email_address=$1",
       [userData.email_address]
     );
     return dbResult;
@@ -17,7 +17,7 @@ const userLogin = async (userData) => {
 //Find user data from pet table
 const findUserData = async () => {
   try {
-    const dbResult = await queryDb("select * from tblUser");
+    const dbResult = await queryDb("select * from account");
     const resultRows = dbResult.rows ? dbResult.rows : [];
     return !resultRows ? [{}] : resultRows;
   } catch (error) {
