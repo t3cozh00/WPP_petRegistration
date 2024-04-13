@@ -53,9 +53,9 @@ ALTER TABLE pet
 ADD COLUMN is_adopted BOOLEAN DEFAULT false;
 
 ALTER TABLE pet
-ADD COLUMN last_edit_date character varying(50) NOT NULL;
+ADD COLUMN last_edit_date character varying(50) ;
 ALTER TABLE pet
-ADD COLUMN post_expire_date character varying(50) NOT NULL,
+ADD COLUMN post_expire_date character varying(50) ;
 
 
 ---

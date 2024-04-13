@@ -1,4 +1,4 @@
-const { userLogin, findUserData } = require("../services/userService.js");
+const { userLogin } = require("../services/userService.js");
 
 const onUserLogin = async (req, res) => {
   try {
@@ -27,15 +27,4 @@ const onUserLogin = async (req, res) => {
   return;
 };
 
-const onGetUserData = async (req, res) => {
-  try {
-    //get details of all the pet data
-    const result = await findUserData();
-    res.status(200).send(result);
-  } catch (error) {
-    res.status(400).send(error.message);
-  }
-  return;
-};
-
-module.exports = { onUserLogin, onGetUserData };
+module.exports = { onUserLogin };

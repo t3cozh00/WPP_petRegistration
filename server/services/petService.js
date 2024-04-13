@@ -5,7 +5,11 @@ const createPetRegistration = async (data) => {
   try {
     // insert pet information into table pet01
     const petResult = await queryDb(
+<<<<<<< HEAD
       'insert into "pet" (id_pet_category, id_user, breed, colour, weight, age, vaccination, vaccination_date, vaccination_hospital_name, description, is_active, is_adopted,last_edit_date, post_expire_date) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) returning *',
+=======
+      'insert into "pet" (id_pet_category, id_user, breed, colour, weight, age, vaccination, vaccination_date, vaccination_hospital_name, description, is_active, is_adopted) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) returning *',
+>>>>>>> 5140d737f7c6083756b1f42894339d3f0620c3c1
       [
         data.id_pet_category,
         data.id_user,
@@ -19,11 +23,17 @@ const createPetRegistration = async (data) => {
         data.description,
         true,
         false, //set these two columns default value
+<<<<<<< HEAD
         data.last_edit_date,
         data.post_expire_date,
       ]
     );
     console.log(petResult.rows[0].id_pet); // 输出 pet 表中插入的数据
+=======
+      ]
+    );
+
+>>>>>>> 5140d737f7c6083756b1f42894339d3f0620c3c1
     // insert pet image into table pet_image
     const petImageResult = await queryDb(
       'insert into "pet_image" (id_pet, image_name) values($1, $2) returning *',
@@ -35,7 +45,11 @@ const createPetRegistration = async (data) => {
       pet: petResult.rows ? petResult.rows : [],
       petImage: petImageResult.rows ? petImageResult.rows : [],
     };
+<<<<<<< HEAD
     return { ...result };
+=======
+    return result;
+>>>>>>> 5140d737f7c6083756b1f42894339d3f0620c3c1
   } catch (error) {
     throw new Error(error.message);
   }
@@ -44,9 +58,13 @@ const createPetRegistration = async (data) => {
 //Find pet data from pet table
 const findPetData = async () => {
   try {
+<<<<<<< HEAD
     const dbResult = await queryDb(
       "select pet_image.id_pet_image, account.id_user,pet.id_pet from pet inner join pet_image on pet.id_pet = pet_image.id_pet inner join account on pet.id_user = account.id_user"
     );
+=======
+    const dbResult = await queryDb("select * from pet");
+>>>>>>> 5140d737f7c6083756b1f42894339d3f0620c3c1
     const resultRows = dbResult.rows ? dbResult.rows : [];
     return !resultRows ? [{}] : resultRows;
   } catch (error) {

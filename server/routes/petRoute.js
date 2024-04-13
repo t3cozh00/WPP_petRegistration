@@ -14,7 +14,10 @@ petRouter.post(`${BASE_URI}/pet-registration`, onPetRegistrationCreate);
 //Find all pet records from pet table
 petRouter.get(`${BASE_URI}/pet`, onGetPetData);
 
+<<<<<<< HEAD
 //Delete pet record from pet table (id will be passed as a path param)
 //petRouter.delete(`${BASE_URI}/petDelete/:id`, onDeletePetData);
 
+=======
+>>>>>>> 5140d737f7c6083756b1f42894339d3f0620c3c1
 module.exports = petRouter;

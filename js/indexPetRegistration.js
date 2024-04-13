@@ -60,6 +60,7 @@ const inputFile = document.querySelector("#fileMultiple");
 selectImage.addEventListener("click", function () {
   inputFile.click();
 });
+
 // upload images area
 inputFile.addEventListener("change", function () {
   const image = this.files[0];

@@ -30,6 +30,7 @@ const onPetRegistrationCreate = async (req, res) => {
           console.log(err);
         }
       });
+<<<<<<< HEAD
 
       const {
         id_pet_category,
@@ -81,6 +82,53 @@ const onPetRegistrationCreate = async (req, res) => {
   }
 };
 
+=======
+    }
+    const {
+      id_pet_category,
+      id_user,
+      breed,
+      colour,
+      weight,
+      age,
+      vaccination,
+      vaccination_date,
+      vaccination_hospital_name,
+      description,
+      is_active,
+      is_adopted,
+      id_pet,
+      //file_name,
+    } = req.body;
+    //save pet registration data
+    const result = await createPetRegistration({
+      id_pet_category,
+      id_user,
+      breed,
+      colour,
+      weight,
+      age,
+      vaccination,
+      vaccination_date,
+      vaccination_hospital_name,
+      description,
+      is_active,
+      is_adopted,
+      file_name,
+      id_pet,
+    });
+    // Check if both pet and pet image information were successfully created
+    if (result.pet && result.petImage) {
+      res.status(200).send(result);
+    } else {
+      res.status(400).send("Failed to create pet registration.");
+    }
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+
+>>>>>>> 5140d737f7c6083756b1f42894339d3f0620c3c1
 const onGetPetData = async (req, res) => {
   //let file_name = "";
   try {

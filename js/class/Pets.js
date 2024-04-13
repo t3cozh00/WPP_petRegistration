@@ -1,4 +1,7 @@
 import { Pet } from "./pet.js";
+import { User } from "./User.js";
+
+const user = new User();
 // import { response } from "express";
 
 class Pets {
@@ -10,12 +13,7 @@ class Pets {
   }
 
   registratePet = (formData) => {
-    //console.log(formData);
-    // for (const value of formData.values()) {
-    //   console.log(value);
-    // }
     return new Promise(async (resolve, reject) => {
-      //const json = JSON.stringify(formData);
       fetch(this.#backend_url + "/pet-registration", {
         method: "post",
         //headers: { "Content-Type": "application/form-data" },
@@ -27,6 +25,7 @@ class Pets {
             this.#addToPetArray(
               json.id_pet,
               formData.id_pet_category,
+              formData.user.id,
               formData.breed,
               formData.colour,
               formData.weight,
@@ -35,8 +34,8 @@ class Pets {
               formData.vaccination_date,
               formData.vaccination_hospital_name,
               formData.description,
-              formData.last_edit_date,
-              formData.post_expire_date,
+              // formData.last_edit_date,
+              // formData.post_expire_date,
               formData.email_address
             )
           );
@@ -50,6 +49,7 @@ class Pets {
   #addToPetArray = (formData) => {
     const {
       id_pet,
+      id_user,
       id_pet_category,
       breed,
       colour,
@@ -59,12 +59,13 @@ class Pets {
       vaccination_date,
       vaccination_hospital_name,
       description,
-      last_edit_date,
-      post_expire_date,
-      email_address,
+      // last_edit_date,
+      // post_expire_date,
+      //email_address,
     } = formData;
     const pet = new Pet(
       id_pet,
+      id_user,
       id_pet_category,
       breed,
       colour,
@@ -73,10 +74,10 @@ class Pets {
       vaccination,
       vaccination_date,
       vaccination_hospital_name,
-      description,
-      last_edit_date,
-      post_expire_date,
-      email_address
+      description
+      // last_edit_date,
+      // post_expire_date,
+      // email_address
     );
     this.#pets.push(pet);
     return pet;
