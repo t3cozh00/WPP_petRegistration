@@ -1,0 +1,170 @@
+tags:
+  - name: Pet Registration
+    description: "Pet Registration maintenance endpoints"
+paths:
+  /pet-registration:
+    post:
+      summary: Create pet registration record in the pet table
+      description: Requires bearer token for authentication
+      security:
+        - Bearer: []
+      tags:
+        - Pet Registration
+      requestBody:
+        required: true
+        description: Payload to create Pet Registration
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id_user:
+                  type: number
+                  description: User id
+                id_pet_category:
+                  type: number
+                  description: Pet category id
+                breed:
+                  type: string
+                  description: Breed of the pet
+                colour:
+                  type: string
+                  description: Colour of the pet
+                weight:
+                  type: string
+                  description: Weight of the pet
+                description:
+                  type: string
+                  description: Description of the pet
+                is_acitve:
+                  type: boolean
+                  description: Pet advertisement is active or not
+                is_adopted:
+                  type: boolean
+                  description: Pet is adopted or not
+                ageyear:
+                  type: string
+                  description: Birthyear of the pet
+                agemonth:
+                  type: string
+                  description: Birthmonth of the pet
+                publishing_date:
+                  type: date
+                  description: Date of the pet advertisement
+                post_expiry_date:
+                  type: date
+                  description: Date of the expiry of the pet advertisement
+                vaccination:
+                  type: string
+                  description: Vaccination check
+                vaccination_date:
+                  type: date
+                  description: Date of the pet
+                vaccination_hospital_name:
+                  type: string
+                  description: Name of vaccination hospital
+                id_adopting_user:
+                  type: number
+                  description: User id of adopter
+                adopted_on:
+                  type: date
+                  description: Date of adoption
+                adoption_remarks:
+                  type: string
+                  description: Remarks of adoption
+                likes:
+                  type: number
+                  description: Number of likes
+              required:
+                - pet_category
+                - id_user
+                - id_pet_category
+                - breed
+                - colour
+                - weight
+                - description
+                - is_acitve
+                - is_adopted
+                - ageyear
+                - agemonth
+                - publishing_date
+                - post_expiry_date
+                - vaccination
+                - vaccination_date
+                - vaccination_hospital_name
+                - id_adopting_user
+                - adopted_on
+                - adoption_remarks
+                - likes
+      responses:
+        "200":
+          description: Successful responses
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id_user:
+                  type: number
+                  description: User id
+                id_pet_category:
+                  type: number
+                  description: Pet category id
+                breed:
+                  type: string
+                  description: Breed of the pet
+                colour:
+                  type: string
+                  description: Colour of the pet
+                weight:
+                  type: string
+                  description: Weight of the pet
+                description:
+                  type: string
+                  description: Description of the pet
+                is_acitve:
+                  type: boolean
+                  description: Pet advertisement is active or not
+                is_adopted:
+                  type: boolean
+                  description: Pet is adopted or not
+                ageyear:
+                  type: string
+                  description: Birthyear of the pet
+                agemonth:
+                  type: string
+                  description: Birthmonth of the pet
+                publishing_date:
+                  type: date
+                  description: Date of the pet advertisement
+                post_expiry_date:
+                  type: date
+                  description: Date of the expiry of the pet advertisement
+                vaccination:
+                  type: string
+                  description: Vaccination check
+                vaccination_date:
+                  type: date
+                  description: Date of the pet
+                vaccination_hospital_name:
+                  type: string
+                  description: Name of vaccination hospital
+                id_adopting_user:
+                  type: number
+                  description: User id of adopter
+                adopted_on:
+                  type: date
+                  description: Date of adoption
+                adoption_remarks:
+                  type: string
+                  description: Remarks of adoption
+                likes:
+                  type: number
+                  description: Number of likes
+
+        "400":
+          description: Bad request
+        "404":
+          description: Not found
+        "500":
+          description: Server error
